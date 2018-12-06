@@ -37,7 +37,7 @@ deploy-to-cluster:
 
     - script:
         name: "Visualise Kubernetes config"
-        code: cat kubernetes.yml
+        code: cat kubernetes.yml.template
 
     - kubectl:
         name: deploy to kubernetes
@@ -45,4 +45,4 @@ deploy-to-cluster:
         #username: $KUBERNETES_USERNAME
         token: $KUBERNETES_TOKEN
         insecure-skip-tls-verify: true
-        command: apply -f kubernetes.yml
+        command: apply -f kubernetes.yml.template
